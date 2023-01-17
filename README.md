@@ -80,6 +80,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 - Body:
 ```
 {
+    "id": 1,
     "firstName": "Matea",
     "lastName": "Novak",
     "oib": 41551951987,
