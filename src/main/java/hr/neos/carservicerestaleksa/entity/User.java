@@ -11,7 +11,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_sequence")
     @SequenceGenerator(name = "user_sequence", allocationSize = 10)
@@ -24,9 +23,8 @@ public class User {
     private String lastName;
 
     @Column
-    private int oib;
+    private Long oib;
 
     @Embedded
     private Address address;
-
 }

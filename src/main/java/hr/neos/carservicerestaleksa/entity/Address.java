@@ -10,7 +10,6 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Address {
-
     @Column
     private String country;
 
@@ -18,11 +17,11 @@ public class Address {
     private String city;
 
     @Column
-    private int postalNumber;
+    private Long postalNumber;
 
     @Column
     private String street;
 
     @Column
-    private int streetNumber;
+    private Long streetNumber;
 }
