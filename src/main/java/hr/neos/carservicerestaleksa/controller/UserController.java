@@ -1,5 +1,6 @@
 package hr.neos.carservicerestaleksa.controller;
 
+import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.dto.UserPostDto;
 import hr.neos.carservicerestaleksa.entity.User;
 import hr.neos.carservicerestaleksa.service.UserService;
@@ -19,5 +20,10 @@ public class UserController {
     private ResponseEntity<?> add(@RequestBody UserPostDto userPostDto){
         UserPostDto savedUser = userService.add(userPostDto);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    private ResponseEntity<UserGetDto> getById(@PathVariable Long id) {
+        return userService.getById(id);
     }
 }

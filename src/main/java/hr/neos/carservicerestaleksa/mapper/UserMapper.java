@@ -13,9 +13,11 @@ import org.mapstruct.*;
 public interface UserMapper {
     //@Mapping(source = "addressDto", target = "address")
     User toEntity(UserPostDto dto);
-    //userPostDtoToDto
 
     //@Mapping(source = "address", target = "addressDto")
     UserPostDto toDto(User user);
-    //userToUserPostDto
+
+    User to_entity(UserGetDto dto);
+
+    UserGetDto to_dto(User user);
 }
