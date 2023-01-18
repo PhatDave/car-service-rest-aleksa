@@ -6,8 +6,6 @@ import hr.neos.carservicerestaleksa.entity.User;
 import hr.neos.carservicerestaleksa.mapper.UserMapper;
 import hr.neos.carservicerestaleksa.repository.UserRepository;
 import lombok.*;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
@@ -27,14 +25,18 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public ResponseEntity<UserGetDto> getById(Long id){
+    public User getById(Long id){
         Optional<User> optionalUser = userRepository.findById(id);
-        if (optionalUser.isPresent()) {
+        if(optionalUser.isPresent()){
             User user = optionalUser.get();
-            UserGetDto userGetDto = userMapper.to_dto(user);
-            return new ResponseEntity<>(userGetDto, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return user;
+        }else{
+            throw new NoSuchElementException("No user with " + id + " exists.");
         }
+    }
+
+    @Override
+    public UserGetDto getDtoById(Long id){
+        return userMapper.to_dto(getById(id));
     }
 }

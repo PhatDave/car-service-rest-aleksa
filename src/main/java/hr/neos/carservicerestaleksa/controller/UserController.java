@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.NoSuchElementException;
+
 
 @RestController
 @RequestMapping("/user")
@@ -23,7 +25,12 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<UserGetDto> getById(@PathVariable Long id) {
-        return userService.getById(id);
+    private ResponseEntity<UserGetDto> getById(@PathVariable Long id){
+        try{
+            UserGetDto user = userService.getDtoById(id);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

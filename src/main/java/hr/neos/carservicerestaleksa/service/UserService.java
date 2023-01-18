@@ -1,9 +1,13 @@
 package hr.neos.carservicerestaleksa.service;
 
 import hr.neos.carservicerestaleksa.dto.*;
-import org.springframework.http.ResponseEntity;
+import hr.neos.carservicerestaleksa.entity.User;
 
 public interface UserService {
     UserPostDto add (UserPostDto dto);
-    ResponseEntity<UserGetDto> getById (Long id);
+
+    User getById(Long id);
+
+    UserGetDto getDtoById (Long id);
+
 }
