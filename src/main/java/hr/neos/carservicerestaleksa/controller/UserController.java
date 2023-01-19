@@ -5,12 +5,13 @@ import hr.neos.carservicerestaleksa.dto.UserPostDto;
 import hr.neos.carservicerestaleksa.entity.User;
 import hr.neos.carservicerestaleksa.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.NoSuchElementException;
-
 
 @RestController
 @RequestMapping("/user")
@@ -30,6 +31,22 @@ public class UserController {
             UserGetDto user = userService.getDtoById(id);
             return new ResponseEntity<>(user, HttpStatus.OK);
         } catch (NoSuchElementException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/all")
+    private ResponseEntity<List<UserGetDto>> getAllDto(){
+        List<UserGetDto> users = userService.getAllDto();
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    private ResponseEntity<Void> deleteById(@PathVariable Long id){
+        try{
+            userService.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (EmptyResultDataAccessException emptyResultDataAccessException){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

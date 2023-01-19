@@ -4,6 +4,8 @@ import hr.neos.carservicerestaleksa.dto.*;
 import hr.neos.carservicerestaleksa.entity.*;
 import org.mapstruct.*;
 
+import java.util.List;
+
 @Mapper(
         uses = {
                 AddressMapper.class,
@@ -20,4 +22,6 @@ public interface UserMapper {
     User to_entity(UserGetDto dto);
 
     UserGetDto to_dto(User user);
+
+    List<UserGetDto> manyToDto(List<User> entities);
 }

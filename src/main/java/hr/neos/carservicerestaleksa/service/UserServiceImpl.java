@@ -8,6 +8,7 @@ import hr.neos.carservicerestaleksa.repository.UserRepository;
 import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -39,4 +40,20 @@ public class UserServiceImpl implements UserService{
     public UserGetDto getDtoById(Long id){
         return userMapper.to_dto(getById(id));
     }
+
+    @Override
+    public List<User> getAll(){
+        return this.userRepository.findAll();
+    }
+
+    @Override
+    public List<UserGetDto> getAllDto() {
+        return userMapper.manyToDto(getAll());
+    }
+
+    @Override
+    public void deleteById(Long id){
+            userRepository.deleteById(id);
+    }
+
 }
