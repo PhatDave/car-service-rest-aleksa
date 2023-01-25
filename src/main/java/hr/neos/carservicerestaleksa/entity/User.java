@@ -1,7 +1,10 @@
 package hr.neos.carservicerestaleksa.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 @Entity
@@ -22,7 +25,7 @@ public class User {
     @Column
     private String lastName;
 
-    @Column
+    @Column(unique = true)
     private Long oib;
 
     @Embedded

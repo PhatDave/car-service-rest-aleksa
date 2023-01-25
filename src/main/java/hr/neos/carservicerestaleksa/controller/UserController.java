@@ -2,7 +2,6 @@ package hr.neos.carservicerestaleksa.controller;
 
 import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.dto.UserPostDto;
-import hr.neos.carservicerestaleksa.entity.User;
 import hr.neos.carservicerestaleksa.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -20,33 +19,33 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/add")
-    private ResponseEntity<?> add(@RequestBody UserPostDto userPostDto){
+    private ResponseEntity<?> add(@RequestBody UserPostDto userPostDto) {
         UserPostDto savedUser = userService.add(userPostDto);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    private ResponseEntity<UserGetDto> getById(@PathVariable Long id){
-        try{
+    private ResponseEntity<UserGetDto> getById(@PathVariable Long id) {
+        try {
             UserGetDto user = userService.getDtoById(id);
             return new ResponseEntity<>(user, HttpStatus.OK);
-        } catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @GetMapping("/all")
-    private ResponseEntity<List<UserGetDto>> getAllDto(){
+    private ResponseEntity<List<UserGetDto>> getAllDto() {
         List<UserGetDto> users = userService.getAllDto();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    private ResponseEntity<Void> deleteById(@PathVariable Long id){
-        try{
+    private ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        try {
             userService.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
-        } catch (EmptyResultDataAccessException emptyResultDataAccessException){
+        } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

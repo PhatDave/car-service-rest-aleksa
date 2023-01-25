@@ -1,8 +1,10 @@
 package hr.neos.carservicerestaleksa.mapper;
 
-import hr.neos.carservicerestaleksa.dto.*;
-import hr.neos.carservicerestaleksa.entity.*;
-import org.mapstruct.*;
+import hr.neos.carservicerestaleksa.dto.UserGetDto;
+import hr.neos.carservicerestaleksa.dto.UserPostDto;
+import hr.neos.carservicerestaleksa.entity.User;
+import org.mapstruct.Builder;
+import org.mapstruct.Mapper;
 
 import java.util.List;
 
