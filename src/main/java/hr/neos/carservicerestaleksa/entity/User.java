@@ -1,11 +1,9 @@
 package hr.neos.carservicerestaleksa.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.*;
 
 @Entity
 @Table(name = "users")
@@ -30,4 +28,7 @@ public class User {
 
     @Embedded
     private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<Car> cars;
 }
