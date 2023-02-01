@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     private final UserValidator userValidator;
 
     @Override
-    public UserPostDto add(UserPostDto dto) {
+    public UserGetDto add(UserPostDto dto) {
         userValidator.validate(dto);
         User user = userMapper.toEntity(dto);
         user = userRepository.save(user);
@@ -35,7 +35,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserGetDto getDtoById(Long id) {
-        return userMapper.to_dto(getById(id));
+        return userMapper.toDto(getById(id));
     }
 
     @Override

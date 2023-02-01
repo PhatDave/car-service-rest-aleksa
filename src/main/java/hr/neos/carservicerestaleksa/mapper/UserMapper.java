@@ -19,11 +19,7 @@ public interface UserMapper {
     User toEntity(UserPostDto dto);
 
     //@Mapping(source = "address", target = "addressDto")
-    UserPostDto toDto(User user);
-
-    User to_entity(UserGetDto dto);
-
-    UserGetDto to_dto(User user);
+    UserGetDto toDto(User user);
 
     List<UserGetDto> manyToDto(List<User> entities);
 }

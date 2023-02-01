@@ -1,7 +1,10 @@
 package hr.neos.carservicerestaleksa.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "cars")
@@ -28,6 +31,7 @@ public class Car {
     private String color;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
+    @JoinColumn(name = "ownerId")
     private User user;
+
 }

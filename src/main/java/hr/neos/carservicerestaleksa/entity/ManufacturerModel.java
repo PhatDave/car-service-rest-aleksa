@@ -1,6 +1,7 @@
 package hr.neos.carservicerestaleksa.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor

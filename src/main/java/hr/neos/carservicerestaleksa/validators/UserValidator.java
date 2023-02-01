@@ -1,7 +1,6 @@
 package hr.neos.carservicerestaleksa.validators;
 
 import hr.neos.carservicerestaleksa.dto.UserPostDto;
-import hr.neos.carservicerestaleksa.mapper.UserMapper;
 import hr.neos.carservicerestaleksa.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class UserValidator {
     private final UserRepository userRepository;
-    private final UserMapper userMapper;
 
     public void validate(UserPostDto dto) {
         validateFirstName(dto);

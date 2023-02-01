@@ -20,7 +20,7 @@ public class UserController {
 
     @PostMapping("/add")
     private ResponseEntity<?> add(@RequestBody UserPostDto userPostDto) {
-        UserPostDto savedUser = userService.add(userPostDto);
+        UserGetDto savedUser = userService.add(userPostDto);
         return new ResponseEntity<>(savedUser, HttpStatus.CREATED);
     }
 

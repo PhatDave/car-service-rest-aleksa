@@ -7,7 +7,7 @@ import hr.neos.carservicerestaleksa.entity.User;
 import java.util.List;
 
 public interface UserService {
-    UserPostDto add(UserPostDto dto);
+    UserGetDto add(UserPostDto dto);
 
     User getById(Long id);
 
