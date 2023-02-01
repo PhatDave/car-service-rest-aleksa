@@ -312,3 +312,63 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 - Header: Location `/car/<service_id>`
 	- <i>service_id</i> treba biti id servisa koji je kreiran iz podataka poslanim <i>request</i>-om
 - <div><b><i>400 (Bad Request)</i></b> u slučaju da nedostaje jedno od polja</div>
+
+### 7. Dohvaćanje servisa
+
+- Potrebno je napraviti <i>endpoint</i> koji služi za prikaz servisa
+
+<b>Request:</b><i>`GET /car-service/<service_id>`</i>
+
+<b>Response:</b>
+- <div><b><i>200 (OK)</i></b> u slučaju kada je servis uspješno dohvaćen</div>
+- Body:
+```
+{
+    "id": 1,
+    "dateAndTime": "2023-02-01T12:30:00.000Z",
+    "employeeFirstName": "Ivan",
+    "employeeLastName": "Ivanović",
+    "workDescription": "Mali servis",
+    "price": "100",
+    "payment": true
+}
+```
+- <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
+
+<b>Request:</b><i>`GET /car-service/all`</i>
+
+<b>Response:</b>
+- <div><b><i>200 (OK)</i></b> u slučaju kada su servisi uspješno dohvaćeni</div>
+- Body:
+```
+[
+    {
+            "id": 1,
+            "dateAndTime": "2023-02-01T12:30:00.000Z",
+    	    "employeeFirstName": "Ivan",
+    	    "employeeLastName": "Ivanović",
+    	    "workDescription": "Mali servis",
+    	    "price": "100",
+    	    "payment": true
+	},
+    {
+	    "id": 2,
+            "dateAndTime": "2023-03-01T12:30:00.000Z",
+    	    "employeeFirstName": "Petar",
+    	    "employeeLastName": "Petrović",
+    	    "workDescription": "Veliki servis",
+    	    "price": "200",
+    	    "payment": true
+	},
+    {
+	    "id": 3,
+            "dateAndTime": "2023-04-01T12:30:00.000Z",
+    	    "employeeFirstName": "Marko",
+    	    "employeeLastName": "Marković",
+    	    "workDescription": "Mali servis",
+    	    "price": "100",
+    	    "payment": false
+	}
+    ...
+]
+```
