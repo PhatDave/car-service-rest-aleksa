@@ -5,6 +5,7 @@ import hr.neos.carservicerestaleksa.dto.CarPostDto;
 import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.service.CarService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -38,5 +39,15 @@ public class CarController {
     private ResponseEntity<List<CarGetDto>> getAllDto() {
         List<CarGetDto> cars = carService.getAllDto();
         return new ResponseEntity<>(cars, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    private ResponseEntity<Void> deleteById(@PathVariable Long id) {
+        try {
+            carService.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }

@@ -50,4 +50,9 @@ public class CarServiceImpl implements CarService {
         return carMapper.manyToDto(getAll());
     }
 
+    @Override
+    public void deleteById(Long id) {
+        carRepository.deleteById(id);
+    }
+
 }
