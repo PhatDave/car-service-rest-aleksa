@@ -277,18 +277,15 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 - Ovaj entitet predstavlja jednu instancu servisa koja je obavljena na jednom od automobila
 
 - Implementacija servisa će imati sljedeća polja:
-	- <i>manufacturerModel</i> (proizvođač i model)
-	- <i>productionYear</i> (godina proizvodnje)
-	- <i>registration</i> (registracija)
-	- <i>color</i> (boja)
-	- <i>user</i> (veza na vlasnika automobila, foreign key!)
-- Za manufacturerModel koristiti <i>Enum</i>
-	- Dodati neke modele i proizvođače kao:
-	    - `BMW_X6("BMW", "X6")`
-    	- `MERCEDES_MAYBACH("Mercedes", "Maybach")`
-    	- `SEAT_IBIZA("Seat", "Ibiza")`
+	- <i>dateAndTime</i> (datum i vrijeme servisa)
+	- <i>employeeFirstName</i> (ime radnika koji je napravio servis)
+	- <i>employeeLastName</i> (prezime radnika koji je napravio servis)
+	- <i>workDescription</i> (opis radova)
+	- <i>price</i> (cijena)
+	- <i>payment</i> (informacija da li je plaćeno ili ne)
+	- <i>car</i> (veza na automobil za koji se radi servis, foreign key!)
 - Zadatak ovog user story-a je omogućiti kreiranje automobila što znači:
-	- Kreiranje entiteta <i>Car</i> (automobil)
+	- Kreiranje entiteta <i>Car Service</i> (servis automobila)
 	- Kreiranje repozitorija
 	- Kreiranje servisa preko kojeg je omogućeno dodavanje automobila
 
