@@ -290,3 +290,25 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 	- Kreiranje servisa preko kojeg je omogućeno dodavanje automobila
 
 <i style="font-size:0.6rem">Napomena: dopušteno je proizvoljno imenovanje entiteta i njihovih polja sve dok to imenovanje ima nekog smisla i razumne podloge</i>
+
+### 10. Dodavanje servisa
+
+- Potrebno je, vrlo slično kao i korisnike i automobile, napraviti <i>endpoint</i> koji će služiti za dodavanje servisa
+
+<b>Request:</b><i>`POST /car-service/add`</i>
+```
+{
+    "dateAndTime": "2023-02-01T12:30:00.000Z",
+    "employeeFirstName": "Ivan",
+    "employeeLastName": "Ivanović",
+    "workDescription": "Mali servis",
+    "price": "100",
+    "payment": true
+}
+```
+
+<b>Response:</b>
+- <div><b><i>201 (Created)</i></b> u slučaju kada je servis uspješno kreiran</div>
+- Header: Location `/car/<service_id>`
+	- <i>service_id</i> treba biti id servisa koji je kreiran iz podataka poslanim <i>request</i>-om
+- <div><b><i>400 (Bad Request)</i></b> u slučaju da nedostaje jedno od polja</div>
