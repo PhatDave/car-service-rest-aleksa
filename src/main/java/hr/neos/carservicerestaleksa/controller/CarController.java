@@ -2,12 +2,14 @@ package hr.neos.carservicerestaleksa.controller;
 
 import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
+import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -30,5 +32,11 @@ public class CarController {
         } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/all")
+    private ResponseEntity<List<CarGetDto>> getAllDto() {
+        List<CarGetDto> cars = carService.getAllDto();
+        return new ResponseEntity<>(cars, HttpStatus.OK);
     }
 }
