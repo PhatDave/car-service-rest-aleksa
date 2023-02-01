@@ -303,7 +303,6 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
     "price": "100",
-    "payment": true
 }
 ```
 
@@ -383,3 +382,27 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 - <div><b><i>200 (OK)</i></b> u slučaju kada je servis uspješno obrisan</div>
 
 - <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
+
+### 13. Postavljanje paymenta kao true
+
+- Potrebno je napraviti <i>endpoint</i> koji služi za postavljanje paymenta (informacije o plaćenosti za pojedini servis) kao true (plaćeno) za pojedini obavaljeni servis
+
+<b>Request:</b><i>`PUT /car-service/<service_id>/payment`</i>
+
+<b>Response:</b>
+- <div><b><i>200 (OK)</i></b> u slučaju kada je servis za određeni automobil plaćen</div>
+- Body:
+```
+{
+    "id": 1,
+    "dateAndTime": "2023-02-01T12:30:00.000Z",
+    "employeeFirstName": "Ivan",
+    "employeeLastName": "Ivanović",
+    "workDescription": "Mali servis",
+    "price": "100",
+    "payment": true
+}
+```
+- <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
+
+- <div><b><i>405 (Method Not Allowed)</></b> ukoliko je payment false </i></div>
