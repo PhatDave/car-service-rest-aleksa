@@ -313,7 +313,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 	- <i>service_id</i> treba biti id servisa koji je kreiran iz podataka poslanim <i>request</i>-om
 - <div><b><i>400 (Bad Request)</i></b> u slučaju da nedostaje jedno od polja</div>
 
-### 7. Dohvaćanje servisa
+### 11. Dohvaćanje servisa
 
 - Potrebno je napraviti <i>endpoint</i> koji služi za prikaz servisa
 
@@ -372,3 +372,14 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     ...
 ]
 ```
+
+### 12. Brisanje servisa
+
+- Potrebno je napraviti <i>endpoint</i> koji služi za brisanje servisa
+
+<b>Request:</b><i>`DELETE /car-service/<service_id>`</i>
+
+<b>Response:</b>
+- <div><b><i>200 (OK)</i></b> u slučaju kada je servis uspješno obrisan</div>
+
+- <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
