@@ -2,7 +2,6 @@ package hr.neos.carservicerestaleksa.controller;
 
 import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
-import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;

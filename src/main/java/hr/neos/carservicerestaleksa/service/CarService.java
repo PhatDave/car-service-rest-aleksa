@@ -2,9 +2,7 @@ package hr.neos.carservicerestaleksa.service;
 
 import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
-import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.entity.Car;
-import hr.neos.carservicerestaleksa.entity.User;
 
 import java.util.List;
 

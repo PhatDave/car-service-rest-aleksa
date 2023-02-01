@@ -2,9 +2,7 @@ package hr.neos.carservicerestaleksa.service;
 
 import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
-import hr.neos.carservicerestaleksa.dto.UserGetDto;
 import hr.neos.carservicerestaleksa.entity.Car;
-import hr.neos.carservicerestaleksa.entity.User;
 import hr.neos.carservicerestaleksa.mapper.CarMapper;
 import hr.neos.carservicerestaleksa.repository.CarRepository;
 import hr.neos.carservicerestaleksa.validators.CarValidator;
