@@ -405,4 +405,4 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 ```
 - <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
 
-- <div><b><i>405 (Method Not Allowed)</></b> ukoliko je payment false </i></div>
+- <div><b><i>405 (Method Not Allowed)</></b> ukoliko je payment false</div>
