@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "cars")
 @Getter
@@ -33,5 +35,8 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "ownerId")
     private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "car")
+    private Set<CarService> carServices;
 
 }
