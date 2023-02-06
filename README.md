@@ -302,7 +302,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeFirstName": "Ivan",
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
-    "price": "100",
+    "price": "100"
 }
 ```
 
