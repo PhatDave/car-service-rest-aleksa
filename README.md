@@ -302,7 +302,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeFirstName": "Ivan",
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
-    "price": "100",
+    "price": 100,
     "car": 1	
 }
 ```
@@ -329,7 +329,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeFirstName": "Ivan",
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
-    "price": "100",
+    "price": 100,
     "payment": true,
     "car": 1	
 }
@@ -349,7 +349,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeFirstName": "Ivan",
     	    "employeeLastName": "Ivanović",
     	    "workDescription": "Mali servis",
-    	    "price": "100",
+    	    "price": 100,
     	    "payment": true,
 	    "car": 1	
 	},
@@ -359,7 +359,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeFirstName": "Petar",
     	    "employeeLastName": "Petrović",
     	    "workDescription": "Veliki servis",
-    	    "price": "200",
+    	    "price": 200,
     	    "payment": true,
 	    "car": 2
 	},
@@ -369,7 +369,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeFirstName": "Marko",
     	    "employeeLastName": "Marković",
     	    "workDescription": "Mali servis",
-    	    "price": "100",
+    	    "price": 100,
     	    "payment": false,
 	    "car": 3
 	}
@@ -404,7 +404,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeFirstName": "Ivan",
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
-    "price": "100",
+    "price": 100,
     "payment": true,
     "car": 1
 }
