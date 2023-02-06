@@ -254,7 +254,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
 	    "manufacturerModel": 1,
 	    "productionYear": 1993,
 	    "registration": "ZG 9212-IO",
-	    "color": "white"
+	    "color": "white"  
 	}
 	...
 ]
@@ -302,7 +302,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeFirstName": "Ivan",
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
-    "price": "100"
+    "price": "100",
+    "car": 1	
 }
 ```
 
@@ -329,7 +330,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
     "price": "100",
-    "payment": true
+    "payment": true,
+    "car": 1	
 }
 ```
 - <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
@@ -348,7 +350,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeLastName": "Ivanović",
     	    "workDescription": "Mali servis",
     	    "price": "100",
-    	    "payment": true
+    	    "payment": true,
+	    "car": 1	
 	},
     {
 	    "id": 2,
@@ -357,7 +360,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeLastName": "Petrović",
     	    "workDescription": "Veliki servis",
     	    "price": "200",
-    	    "payment": true
+    	    "payment": true,
+	    "car": 2
 	},
     {
 	    "id": 3,
@@ -366,7 +370,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "employeeLastName": "Marković",
     	    "workDescription": "Mali servis",
     	    "price": "100",
-    	    "payment": false
+    	    "payment": false,
+	    "car": 3
 	}
     ...
 ]
@@ -400,7 +405,8 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
     "price": "100",
-    "payment": true
+    "payment": true,
+    "car": 1
 }
 ```
 - <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
