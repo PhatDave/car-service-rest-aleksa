@@ -1,10 +1,8 @@
 package hr.neos.carservicerestaleksa.mapper;
 
 
-import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServiceGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServicePostDto;
-import hr.neos.carservicerestaleksa.entity.Car;
 import hr.neos.carservicerestaleksa.entity.CarService;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;

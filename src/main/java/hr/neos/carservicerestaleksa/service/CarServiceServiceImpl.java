@@ -34,7 +34,7 @@ public class CarServiceServiceImpl implements CarServiceService {
     }
 
     @Override
-    public CarServiceGetDto getDtoById(Long id){
+    public CarServiceGetDto getDtoById(Long id) {
         return carServiceMapper.toDto(getById(id));
     }
 
