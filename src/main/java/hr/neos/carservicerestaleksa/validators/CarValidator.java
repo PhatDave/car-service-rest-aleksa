@@ -1,9 +1,7 @@
 package hr.neos.carservicerestaleksa.validators;
 
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
-import hr.neos.carservicerestaleksa.entity.ManufacturerModel;
-import hr.neos.carservicerestaleksa.repository.CarRepository;
-import hr.neos.carservicerestaleksa.repository.UserRepository;
+import hr.neos.carservicerestaleksa.entity.ManufacturerModel;;
 import hr.neos.carservicerestaleksa.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -11,10 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class CarValidator {
-    private final CarRepository carRepository;
-    private final UserRepository userRepository;
     private final UserService userService;
-
 
     public void validate(CarPostDto dto) {
         validateEnumEntryExists(dto);

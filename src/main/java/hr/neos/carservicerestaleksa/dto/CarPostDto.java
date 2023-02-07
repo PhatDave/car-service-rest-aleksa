@@ -15,6 +15,4 @@ public class CarPostDto {
     private Long productionYear;
     private String registration;
     private String color;
-
-
 }

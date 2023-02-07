@@ -41,7 +41,7 @@ public class CarService {
     private boolean payment;
 
     @ManyToOne
-    @JoinColumn(name = "car_id")
+    @JoinColumn(name = "carId")
     private Car car;
 
 }

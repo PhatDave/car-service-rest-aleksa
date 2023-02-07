@@ -14,6 +14,7 @@ public class UserValidator {
         validateFirstName(dto);
         validateLastName(dto);
         validateOIB(dto);
+
     }
 
     private void validateFirstName(UserPostDto dto) {
