@@ -1,11 +1,15 @@
 package hr.neos.carservicerestaleksa.mapper;
 
 
+import hr.neos.carservicerestaleksa.dto.CarGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServiceGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServicePostDto;
+import hr.neos.carservicerestaleksa.entity.Car;
 import hr.neos.carservicerestaleksa.entity.CarService;
 import org.mapstruct.*;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 
 @Mapper(
@@ -26,4 +30,6 @@ public abstract class CarServiceMapper {
     public void mapCar(CarServicePostDto dto, @MappingTarget CarService carServiceTarget) {
         carServiceTarget.setCar(carService.getById(dto.getCar()));
     }
+
+    public abstract List<CarServiceGetDto> manyToDto(List<CarService> entities);
 }

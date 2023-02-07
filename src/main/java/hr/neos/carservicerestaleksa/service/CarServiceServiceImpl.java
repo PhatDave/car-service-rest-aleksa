@@ -9,6 +9,7 @@ import hr.neos.carservicerestaleksa.validators.CarServiceValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -30,6 +31,26 @@ public class CarServiceServiceImpl implements CarServiceService {
     public CarService getById(Long id) {
         return this.carServiceRepository.findById(id).orElseThrow(() -> new
                 NoSuchElementException("No car service with id " + id + " exists"));
+    }
+
+    @Override
+    public CarServiceGetDto getDtoById(Long id){
+        return carServiceMapper.toDto(getById(id));
+    }
+
+    @Override
+    public List<CarService> getAll() {
+        return this.carServiceRepository.findAll();
+    }
+
+    @Override
+    public List<CarServiceGetDto> getAllDto() {
+        return carServiceMapper.manyToDto(getAll());
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        carServiceRepository.deleteById(id);
     }
 
 }
