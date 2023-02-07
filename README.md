@@ -303,7 +303,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "employeeLastName": "Ivanović",
     "workDescription": "Mali servis",
     "price": 100,
-    "car": 1	
+    "carId": 1	
 }
 ```
 
@@ -331,7 +331,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     "workDescription": "Mali servis",
     "price": 100,
     "payment": true,
-    "car": 1	
+    "carId": 1	
 }
 ```
 - <div><b><i>404 (Not Found)</i></b> u slučaju kada ne postoji servis s id-om <i>service_id</i></div>
@@ -351,7 +351,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "workDescription": "Mali servis",
     	    "price": 100,
     	    "payment": true,
-	    "car": 1	
+	    "carId": 1	
 	},
     {
 	    "id": 2,
@@ -361,7 +361,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "workDescription": "Veliki servis",
     	    "price": 200,
     	    "payment": true,
-	    "car": 2
+	    "carId": 2
 	},
     {
 	    "id": 3,
@@ -371,7 +371,7 @@ Aplikacija je zamišljena kao aplikacija za vođenje servisa za automobile. Omog
     	    "workDescription": "Mali servis",
     	    "price": 100,
     	    "payment": false,
-	    "car": 3
+	    "carId": 3
 	}
     ...
 ]
