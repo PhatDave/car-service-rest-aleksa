@@ -1,7 +1,7 @@
 package hr.neos.carservicerestaleksa.validators;
 
 import hr.neos.carservicerestaleksa.dto.CarPostDto;
-import hr.neos.carservicerestaleksa.entity.ManufacturerModel;;
+import hr.neos.carservicerestaleksa.entity.ManufacturerModel;
 import hr.neos.carservicerestaleksa.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

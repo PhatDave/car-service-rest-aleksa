@@ -1,6 +1,5 @@
 package hr.neos.carservicerestaleksa.dto;
 
-import hr.neos.carservicerestaleksa.entity.Car;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

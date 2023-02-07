@@ -21,37 +21,37 @@ public class CarServiceValidator {
         validateCar(dto);
     }
 
-    private void validateDateAndTime(CarServicePostDto dto){
-        if (dto.getDateAndTime() == null){
+    private void validateDateAndTime(CarServicePostDto dto) {
+        if (dto.getDateAndTime() == null) {
             throw new IllegalStateException("Date and time not found.");
         }
     }
 
-    private void validateEmployeeFirstName(CarServicePostDto dto){
-        if (dto.getEmployeeFirstName() == null){
+    private void validateEmployeeFirstName(CarServicePostDto dto) {
+        if (dto.getEmployeeFirstName() == null) {
             throw new IllegalStateException("Employee first name not found.");
         }
     }
 
-    private void validateEmployeeLastName(CarServicePostDto dto){
-        if(dto.getEmployeeLastName() == null){
+    private void validateEmployeeLastName(CarServicePostDto dto) {
+        if (dto.getEmployeeLastName() == null) {
             throw new IllegalStateException("Employee last name not found.");
         }
     }
 
-    private void validateWorkDescription(CarServicePostDto dto){
-        if(dto.getWorkDescription() == null){
+    private void validateWorkDescription(CarServicePostDto dto) {
+        if (dto.getWorkDescription() == null) {
             throw new IllegalStateException("Work description not found.");
         }
     }
 
-    private void validatePrice(CarServicePostDto dto){
-        if(dto.getPrice()==null){
+    private void validatePrice(CarServicePostDto dto) {
+        if (dto.getPrice() == null) {
             throw new IllegalStateException("Price not found.");
         }
     }
 
-    private void validateCar(CarServicePostDto dto){
+    private void validateCar(CarServicePostDto dto) {
         validateCarExists(dto);
         validateCarEntityExists(dto);
     }

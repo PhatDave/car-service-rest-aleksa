@@ -1,7 +1,5 @@
 package hr.neos.carservicerestaleksa.controller;
 
-import hr.neos.carservicerestaleksa.dto.CarGetDto;
-import hr.neos.carservicerestaleksa.dto.CarPostDto;
 import hr.neos.carservicerestaleksa.dto.CarServiceGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServicePostDto;
 import hr.neos.carservicerestaleksa.service.CarServiceService;

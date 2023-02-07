@@ -13,13 +13,13 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-public class CarServiceServiceImpl implements CarServiceService{
+public class CarServiceServiceImpl implements CarServiceService {
     private final CarServiceRepository carServiceRepository;
     private final CarServiceMapper carServiceMapper;
     private final CarServiceValidator carServiceValidator;
 
     @Override
-    public CarServiceGetDto add(CarServicePostDto dto){
+    public CarServiceGetDto add(CarServicePostDto dto) {
         carServiceValidator.validate(dto);
         CarService carService = carServiceMapper.toEntity(dto);
         carService = carServiceRepository.save(carService);
@@ -27,7 +27,7 @@ public class CarServiceServiceImpl implements CarServiceService{
     }
 
     @Override
-    public CarService getById(Long id){
+    public CarService getById(Long id) {
         return this.carServiceRepository.findById(id).orElseThrow(() -> new
                 NoSuchElementException("No car service with id " + id + " exists"));
     }
