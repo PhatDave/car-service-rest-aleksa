@@ -6,11 +6,13 @@ import hr.neos.carservicerestaleksa.entity.CarService;
 import hr.neos.carservicerestaleksa.mapper.CarServiceMapper;
 import hr.neos.carservicerestaleksa.repository.CarServiceRepository;
 import hr.neos.carservicerestaleksa.validators.CarServiceValidator;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -52,5 +54,13 @@ public class CarServiceServiceImpl implements CarServiceService {
     public void deleteById(Long id) {
         carServiceRepository.deleteById(id);
     }
+
+    @Override
+    public CarService updatePayment(Long id){
+        CarService carService = getById(id);
+        carService.setPayment(true);
+        return carServiceRepository.save(carService);
+    }
+
 
 }

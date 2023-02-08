@@ -2,6 +2,8 @@ package hr.neos.carservicerestaleksa.controller;
 
 import hr.neos.carservicerestaleksa.dto.CarServiceGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServicePostDto;
+import hr.neos.carservicerestaleksa.entity.CarService;
+import hr.neos.carservicerestaleksa.mapper.CarServiceMapper;
 import hr.neos.carservicerestaleksa.service.CarServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -17,6 +19,7 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 public class CarServiceController {
     private final CarServiceService carServiceService;
+    private final CarServiceMapper carServiceMapper;
 
     @PostMapping("/add")
     private ResponseEntity<?> add(@RequestBody CarServicePostDto carServicePostDto) {
@@ -46,6 +49,16 @@ public class CarServiceController {
             carServiceService.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/{id}/payment")
+    private ResponseEntity<Void> updatePayment(@PathVariable Long id){
+        try {
+            carServiceService.updatePayment(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (NoSuchElementException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

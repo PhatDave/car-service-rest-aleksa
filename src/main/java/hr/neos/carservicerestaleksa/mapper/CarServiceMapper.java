@@ -30,4 +30,5 @@ public abstract class CarServiceMapper {
     }
 
     public abstract List<CarServiceGetDto> manyToDto(List<CarService> entities);
+
 }

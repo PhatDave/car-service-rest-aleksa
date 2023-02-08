@@ -19,4 +19,8 @@ public interface CarServiceService {
     List<CarServiceGetDto> getAllDto();
 
     void deleteById(Long id);
+
+    CarService updatePayment(Long id);
+
+
 }
