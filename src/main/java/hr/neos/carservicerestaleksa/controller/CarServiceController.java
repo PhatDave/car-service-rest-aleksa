@@ -2,7 +2,6 @@ package hr.neos.carservicerestaleksa.controller;
 
 import hr.neos.carservicerestaleksa.dto.CarServiceGetDto;
 import hr.neos.carservicerestaleksa.dto.CarServicePostDto;
-import hr.neos.carservicerestaleksa.entity.CarService;
 import hr.neos.carservicerestaleksa.mapper.CarServiceMapper;
 import hr.neos.carservicerestaleksa.service.CarServiceService;
 import lombok.RequiredArgsConstructor;
@@ -54,7 +53,7 @@ public class CarServiceController {
     }
 
     @PutMapping("/{id}/payment")
-    private ResponseEntity<Void> updatePayment(@PathVariable Long id){
+    private ResponseEntity<Void> updatePayment(@PathVariable Long id) {
         try {
             carServiceService.updatePayment(id);
             return new ResponseEntity<>(HttpStatus.OK);
